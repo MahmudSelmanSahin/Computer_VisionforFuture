@@ -78,7 +78,7 @@ Before diving into computer vision, ensure you have:
 Download and install Python 3.8+ from [python.org](https://www.python.org/downloads/)
 
 ```bash
-# Verify installation
+# Verify installation (should show Python 3.8 or higher)
 python --version
 # or
 python3 --version
@@ -119,16 +119,33 @@ pip install jupyter
 
 #### Step 4: Verify Installation
 
+**For TensorFlow:**
 ```python
 # Create a file test_installation.py
 import cv2
 import numpy as np
-import tensorflow as tf  # or import torch
+import tensorflow as tf
 from PIL import Image
 
 print("OpenCV version:", cv2.__version__)
 print("NumPy version:", np.__version__)
-print("TensorFlow version:", tf.__version__)  # or torch.__version__
+print("TensorFlow version:", tf.__version__)
+print("All libraries installed successfully!")
+```
+
+**For PyTorch:**
+```python
+# Create a file test_installation.py
+import cv2
+import numpy as np
+import torch
+import torchvision
+from PIL import Image
+
+print("OpenCV version:", cv2.__version__)
+print("NumPy version:", np.__version__)
+print("PyTorch version:", torch.__version__)
+print("Torchvision version:", torchvision.__version__)
 print("All libraries installed successfully!")
 ```
 
@@ -146,6 +163,11 @@ import numpy as np
 
 # Read an image
 image = cv2.imread('path/to/your/image.jpg')
+
+# Check if image was loaded successfully
+if image is None:
+    print("Error: Could not load image. Please check the file path.")
+    exit()
 
 # Convert to grayscale
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -458,10 +480,10 @@ image = Image.open('image.jpg')
 - [Papers with Code](https://paperswithcode.com/area/computer-vision) - Latest research
 
 ### YouTube Channels
-- [Two Minute Papers](https://www.youtube.com/c/K%C3%A1rolyZsolnai) - AI research summaries
-- [Yannic Kilcher](https://www.youtube.com/c/YannicKilcher) - Paper explanations
-- [Sentdex](https://www.youtube.com/c/sentdex) - Python & CV tutorials
-- [3Blue1Brown](https://www.youtube.com/c/3blue1brown) - Math intuition
+- [Two Minute Papers](https://www.youtube.com/@TwoMinutePapers) - AI research summaries
+- [Yannic Kilcher](https://www.youtube.com/@YannicKilcher) - Paper explanations
+- [Sentdex](https://www.youtube.com/@sentdex) - Python & CV tutorials
+- [3Blue1Brown](https://www.youtube.com/@3blue1brown) - Math intuition
 
 ---
 
